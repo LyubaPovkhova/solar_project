@@ -18,11 +18,14 @@ def read_space_objects_data_from_file(input_filename):
             if len(line.strip()) == 0 or line[0] == '#':
                 continue  # пустые строки и строки-комментарии пропускаем
             object_type = line.split()[0].lower()
-            if object_type == "star":
+
+
+            if object_type == "star":  
                 star = Star()
                 parse_star_parameters(line, star)
                 objects.append(star)
-            if object_type == "planet":
+            if object_type == "planet": 
+
                 planet = Planet()
                 parse_planet_parameters(line, planet)
                 objects.append(planet)
@@ -43,7 +46,11 @@ def parse_star_parameters(line, star):
     Параметры:
     **line** — строка с описание звезды.
     **star** — объект звезды.
+
     """
+
+
+
     A = line.split(sep = ' ')
     line = A[0]
     star.R = int(A[1])
@@ -53,9 +60,11 @@ def parse_star_parameters(line, star):
     star.y = float(A[5])
     star.Vx = float(A[6])
     star.Vy = float(A[7])
-
-
-
+    
+    
+    
+    
+    
 
 
 
